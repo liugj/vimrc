@@ -28,7 +28,7 @@ Thst's it!
 
 ## How to manage this vimrc?
 
-All plugins are listed in file `bundles.vim` with detailed comments, just add plugins as you like.
+All plugins are listed in file `plugin.vim` with detailed comments, just add plugins as you like.
 
 1. `:PlugClean` to clean up unused plugins
 2. `:PlugInstall` to install newly added plugins
