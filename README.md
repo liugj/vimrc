@@ -1,7 +1,7 @@
 Liugj's Vim config
 ==================
 
-I use `Vim-Plug` to manage my plugins, which makes my `.vim` directory clean and tidy
+I use [Vim-Plug](https://github.com/junegunn/vim-plug/blob/master/README.md) to manage my plugins, which makes my `.vim` directory clean and tidy
 
 ## Installation
 
@@ -30,8 +30,15 @@ Thst's it!
 
 All plugins are listed in file `plugin.vim` with detailed comments, just add plugins as you like.
 
-1. `:PlugClean` to clean up unused plugins
-2. `:PlugInstall` to install newly added plugins
-3. `:PlugInstall!` to upgrade all plugins
+### Commands
 
-Other configurations are also well organized in vimrc.
+| Command                             | Description                                                        |
+| ----------------------------------- | ------------------------------------------------------------------ |
+| `PlugInstall [name ...] [#threads]` | Install plugins                                                    |
+| `PlugUpdate [name ...] [#threads]`  | Install or update plugins                                          |
+| `PlugClean[!]`                      | Remove unlisted plugins (bang version will clean without prompt) |
+| `PlugUpgrade`                       | Upgrade vim-plug itself                                            |
+| `PlugStatus`                        | Check the status of plugins                                        |
+| `PlugDiff`                          | Examine changes from the previous update and the pending changes   |
+| `PlugSnapshot[!] [output path]`     | Generate script for restoring the current snapshot of the plugins  |
+
