@@ -1,0 +1,105 @@
+" Specify a directory for plugins
+" - For Neovim: stdpath('data') . '/plugged'
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+" Make sure you use single quotes
+
+"------------------       
+" Code Completions        
+"------------------       
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'vim-scripts/progressbar-widget' 
+" deoplete
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+Plug 'mattn/emmet-vim'  
+Plug 'Raimondi/delimitMate'
+Plug 'ervandew/supertab'
+" snippets                
+Plug 'garbas/vim-snipmate' 
+Plug 'honza/vim-snippets'  
+"------ snipmate dependencies -------
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+
+"-----------------
+" Fast navigation
+"-----------------
+Plug 'https://github.com/adelarsq/vim-matchit'
+Plug 'Lokaltog/vim-easymotion'
+
+"--------------
+" Fast editing
+"--------------
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdcommenter'
+Plug 'sjl/gundo.vim'
+Plug 'godlygeek/tabular'
+Plug 'nathanaelkane/vim-indent-guides'
+
+"--------------
+" IDE features
+"--------------
+Plug 'scrooloose/nerdtree'
+Plug 'humiaozuzu/TabBar'
+Plug 'majutsushi/tagbar'
+Plug 'mileszs/ack.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'tpope/vim-fugitive'
+Plug 'Lokaltog/vim-powerline'
+Plug 'scrooloose/syntastic'
+Plug 'bronson/vim-trailing-whitespace'
+
+"-------------
+" Other Utils
+"-------------
+" Plug 'humiaozuzu/fcitx-status'
+Plug 'nvie/vim-togglemouse'
+
+"----------------------------------------
+" Syntax/Indent for language enhancement
+"----------------------------------------
+"------- web backend ---------
+Plug '2072/PHP-Indenting-for-VIm'
+Plug 'lepture/vim-jinja'
+"------- web frontend ----------
+Plug 'othree/html5.vim'
+" Plug 'tpope/vim-haml'
+Plug 'pangloss/vim-javascript'
+Plug 'kchmck/vim-coffee-script'
+Plug 'nono/jquery.vim'
+" Plug 'groenewege/vim-less'
+" Plug 'wavded/vim-stylus'
+" Plug 'nono/vim-handlebars'
+"------- markup language -------
+Plug 'tpope/vim-markdown'
+" Plug 'timcharper/textile.vim'
+"------- Ruby --------
+" Plug 'tpope/vim-endwise'
+"------- Go ----------
+Plug 'fatih/vim-go'
+"------- FPs ------
+Plug 'kien/rainbow_parentheses.vim'
+" Plug 'wlangstroth/vim-racket'
+" Plug 'vim-scripts/VimClojure'
+" Plug 'rosstimson/scala-vim-support'
+
+"--------------
+" Color Schemes
+"--------------
+Plug 'rickharris/vim-blackboard'
+Plug 'altercation/vim-colors-solarized'
+Plug 'rickharris/vim-monokai'
+Plug 'tpope/vim-vividchalk'
+Plug 'Lokaltog/vim-distinguished'
+Plug 'chriskempson/vim-tomorrow-theme'                                                                                                                                                            
+Plug 'fisadev/fisa-vim-colorscheme'
+
+" Initialize plugin system
+call plug#end()
