@@ -269,4 +269,66 @@ if has("gui_running")
     map <D-0> :tablast<CR>
 endif
 
+if has("unix")
+   nmap xr :r $HOME/.vim/.vimxfer<CR>
+   nmap xw :'a,.w! $HOME/.vim/.vimxfer<CR>
+   vmap xr c<esc>:r $HOME/.vim/.vimxfer<CR>
+   vmap xw :w! $HOME/.vim/.vimxfer<CR>
+ else
+   nmap xr :r c:/.vimxfer<CR>
+   nmap xw :'a,.w! c:/.vimxfer<CR>
+   vmap xr c<esc>:r c:/.vimxfer<cr>
+   vmap xw :w! c:/.vimxfer<CR>
+ endif
+let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
+nnoremap <buffer> <C-y> :call pdv#DocumentWithSnip()<CR>
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+let g:NERDTreeGlyphReadOnly = "RO"
+"php-cs-fixer is in $PATH, you don't need to define line below
+" let g:php_cs_fixer_path = "~/php-cs-fixer.phar" " define the path to the php-cs-fixer.phar
+
+" If you use php-cs-fixer version 1.x
+"let g:php_cs_fixer_level = "symfony"                   " options: --level (default:symfony)
+"let g:php_cs_fixer_config = "default"                  " options: --config
+" If you want to define specific fixers:
+"let g:php_cs_fixer_fixers_list = "linefeed,short_tag" " options: --fixers
+"let g:php_cs_fixer_config_file = '.php_cs'            " options: --config-file
+" End of php-cs-fixer version 1 config params
+
+" If you use php-cs-fixer version 2.x
+let g:php_cs_fixer_rules = "@PSR2"          " options: --rules (default:@PSR2)
+let g:php_cs_fixer_cache = ".php_cs.cache" " options: --cache-file
+let g:php_cs_fixer_config_file = '.php_cs' " options: --config
+" End of php-cs-fixer version 2 config params
+
+let g:php_cs_fixer_php_path = "php"               " Path to PHP
+let g:php_cs_fixer_enable_default_mapping = 1     " Enable the mapping by default (<leader>pcd)
+let g:php_cs_fixer_dry_run = 0                    " Call command with dry-run option
+let g:php_cs_fixer_verbose = 0                    " Return the output of command if 1, else an inline information.
+nnoremap <silent><leader>pcd :call PhpCsFixerFixDirectory()<CR>
+nnoremap <silent><leader>pcf :call PhpCsFixerFixFile()<CR>
+" call deoplete#custom#option({
+" \ 'auto_complete_delay': 200,
+" \ 'smart_case': v:true,
+" \ 
+" \ })
+" let g:deoplete#enable_at_startup = 1
+let g:syntastic_php_checkers = ['php']
+
+
 let g:deoplete#enable_at_startup = 1
+" php insert namespace 
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+function! IPhpExpandClass()
+    call PhpExpandClass()
+    call feedkeys('a', 'n')
+endfunction
+autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
+autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>

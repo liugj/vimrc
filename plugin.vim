@@ -65,9 +65,18 @@ Plug 'nvie/vim-togglemouse'
 "----------------------------------------
 " Syntax/Indent for language enhancement
 "----------------------------------------
-"------- web backend ---------
+"------- web backend ----------
 Plug '2072/PHP-Indenting-for-VIm'
 Plug 'lepture/vim-jinja'
+"------- php-doc --------------
+Plug 'tobyS/pdv'
+Plug 'tobyS/vmustache'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+"------- php-cs-fixer ----------
+Plug 'stephpy/vim-php-cs-fixer'
+Plug 'arnaud-lb/vim-php-namespace'
+
 "------- web frontend ----------
 Plug 'othree/html5.vim'
 " Plug 'tpope/vim-haml'
