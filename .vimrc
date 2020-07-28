@@ -57,7 +57,6 @@ set shiftwidth=4    " indent width
 " set smarttab
 set expandtab       " expand tab to space
 
-autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
@@ -110,7 +109,7 @@ hi Tb_VisibleChanged guifg=green ctermbg=252 ctermfg=white
 let g:EasyMotion_leader_key = '<Leader>'
 
 " Tagbar
-let g:tagbar_left=1
+let g:tagbar_right=1
 let g:tagbar_width=30
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0
@@ -147,7 +146,7 @@ let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
 " let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
-let NERDTreeWinPos = "right"
+let NERDTreeWinPos = "left"
 
 " nerdcommenter
 let NERDSpaceDelims=1
@@ -182,6 +181,19 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
 autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
+
+let g:loaded_syntastic_cpp_cppcheck_checker=1
+let g:loaded_syntastic_cpp_clang_tidy_checker = 1
+let g:loaded_syntastic_cpp_gcc_checker = 0
+let g:loaded_syntastic_cpp_avrgcc_checker = 1
+let g:loaded_syntastic_cpp_clang_check_checker = 1
+let g:loaded_syntastic_cpp_cppclean_checker = 1
+let g:loaded_syntastic_cpp_oclint_checker = 1
+let g:loaded_syntastic_cpp_cpplint_checker = 1
+let g:loaded_syntastic_cpp_flawfinder_checker = 1
+let g:loaded_syntastic_cpp_verapp_checker = 1
+let g:loaded_syntastic_cpp_pc_lint_checker = 1
+
 
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
@@ -332,3 +344,36 @@ function! IPhpExpandClass()
 endfunction
 autocmd FileType php inoremap <Leader>e <Esc>:call IPhpExpandClass()<CR>
 autocmd FileType php noremap <Leader>e :call PhpExpandClass()<CR>
+" c++
+let g:clang_format#style_options = {
+            \ "BasedOnStyle" : "Google",
+            \ "ColumnLimit" : 120,
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortIfStatementsOnASingleLine" : "true",
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "Standard" : "C++11"}
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_posix_standard = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+let g:clang_format#auto_format_on_insert_leave=1
+
+
+" map to <Leader>cf in C++ code
+autocmd FileType c,cpp,objc,cxx nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc,cxx vnoremap <buffer><Leader>cf :ClangFormat<CR>
+" if you install vim-operator-user
+autocmd FileType c,cpp,objc,cxx map <buffer><Leader>x <Plug>(operator-clang-format)
+" Toggle auto formatting:
+nmap <Leader>C :ClangFormatAutoToggle<CR>
+"===================================
+""xdebug
+"==================================
+" let g:vdebug_options = {}
+"let g:vdebug_options["port"] = 9010
+"let g:vdebug_options["debug_file"] = "~/vdebug.log"
+"let g:vdebug_options["debug_file_level"] = 2
+"let g:vdebug_options['break_on_open'] = 0

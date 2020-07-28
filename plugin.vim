@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 " Code Completions        
 "------------------       
 Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+" Plug 'vim-vdebug/vdebug'
 Plug 'vim-scripts/progressbar-widget' 
 " deoplete
 if has('nvim')
@@ -19,7 +20,8 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'mattn/emmet-vim'  
-Plug 'Raimondi/delimitMate'
+"Plug 'Raimondi/delimitMate'
+Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
 " snippets                
 Plug 'garbas/vim-snipmate' 
@@ -54,7 +56,9 @@ Plug 'kien/ctrlp.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'Lokaltog/vim-powerline'
 Plug 'scrooloose/syntastic'
+Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'bronson/vim-trailing-whitespace'
+Plug 'rhysd/vim-clang-format'
 
 "-------------
 " Other Utils
