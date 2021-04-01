@@ -24,7 +24,7 @@ Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
 " snippets                
-Plug 'garbas/vim-snipmate' 
+" Plug 'garbas/vim-snipmate' 
 Plug 'honza/vim-snippets'  
 "------ snipmate dependencies -------
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -78,8 +78,9 @@ Plug 'tobyS/vmustache'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 "------- php-cs-fixer ----------
-Plug 'stephpy/vim-php-cs-fixer'
+" Plug 'stephpy/vim-php-cs-fixer'
 Plug 'arnaud-lb/vim-php-namespace'
+Plug 'aeke/vim-php-cs-fixer'
 
 "------- web frontend ----------
 Plug 'othree/html5.vim'
@@ -96,7 +97,8 @@ Plug 'tpope/vim-markdown'
 "------- Ruby --------
 " Plug 'tpope/vim-endwise'
 "------- Go ----------
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
+Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh'  }
 "------- FPs ------
 Plug 'kien/rainbow_parentheses.vim'
 " Plug 'wlangstroth/vim-racket'
