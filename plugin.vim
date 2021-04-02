@@ -18,6 +18,10 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'lighttiger2505/deoplete-vim-lsp'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+
 Plug 'mattn/emmet-vim'  
 "Plug 'Raimondi/delimitMate'
 Plug 'jiangmiao/auto-pairs'
