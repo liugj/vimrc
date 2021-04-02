@@ -8,7 +8,6 @@ call plug#begin('~/.vim/plugged')
 "------------------       
 " Code Completions        
 "------------------       
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 " Plug 'vim-vdebug/vdebug'
 Plug 'vim-scripts/progressbar-widget' 
 " deoplete
@@ -71,6 +70,11 @@ Plug 'nvie/vim-togglemouse'
 "----------------------------------------
 "------- web backend ----------
 Plug '2072/PHP-Indenting-for-VIm'
+" Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+" Plug 'camilledejoye/phpactor-mappings'
+Plug 'kristijanhusak/deoplete-phpactor'
+Plug 'phpactor/coc-phpactor'
 Plug 'lepture/vim-jinja'
 "------- php-doc --------------
 Plug 'tobyS/pdv'
@@ -98,8 +102,10 @@ Plug 'tpope/vim-markdown'
 " Plug 'tpope/vim-endwise'
 "------- Go ----------
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries'  }
-Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh'  }
-"------- FPs ------
+Plug 'natebosch/vim-lsc'
+" Plug 'nsf/gocode', { 'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh'  }
+" Plug 'Blackrush/vim-gocode'
+" ------- FPs ------
 Plug 'kien/rainbow_parentheses.vim'
 " Plug 'wlangstroth/vim-racket'
 " Plug 'vim-scripts/VimClojure'
@@ -113,7 +119,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'rickharris/vim-monokai'
 Plug 'tpope/vim-vividchalk'
 Plug 'Lokaltog/vim-distinguished'
-Plug 'chriskempson/vim-tomorrow-theme'                                                                                                                                                            
+Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'fisadev/fisa-vim-colorscheme'
 
 " Initialize plugin system
