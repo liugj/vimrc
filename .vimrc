@@ -184,35 +184,36 @@ autocmd FileType c setlocal omnifunc=ccomplete#Complete
 " autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
 autocmd FileType go setlocal omnifunc=gocomplete#Complete
 
-call deoplete#custom#option('sources', {'php' : ['omni', 'phpactor', 'ultisnips', 'buffer']})
+" call deoplete#custom#option('sources', {'php' : ['omni', 'phpactor', 'ultisnips', 'buffer']})
 
 let g:phpactorPhpBin = "/usr/bin/php8.0"
 let g:phpactorCompletionIgnoreCase=1
-autocmd FileType php setlocal omnifunc=phpactor#Complete
+" autocmd FileType php setlocal omnifunc=phpactor#Complete
+let g:lsp_settings_filetype_php = 'psalm-language-server'
 
-augroup PhpactorMappings
-  au!
-  au FileType php nmap <buffer> <Leader>u :PhpactorImportClass<CR>
-  au FileType php nmap <buffer> <Leader>e :PhpactorClassExpand<CR>
-  au FileType php nmap <buffer> <Leader>ua :PhpactorImportMissingClasses<CR>
-  au FileType php nmap <buffer> <Leader>mm :PhpactorContextMenu<CR>
-  au FileType php nmap <buffer> <Leader>nn :PhpactorNavigate<CR>
-  au FileType php,cucumber nmap <buffer> <C-]>
-      \ :PhpactorGotoDefinition edit<CR>
-  au FileType php nmap <buffer> <Leader>K :PhpactorHover<CR>
-  au FileType php nmap <buffer> <Leader>tt :PhpactorTransform<CR>
-  au FileType php nmap <buffer> <Leader>cc :PhpactorClassNew<CR>
-  au FileType php nmap <buffer> <Leader>ci :PhpactorClassInflect<CR>
-  au FileType php nmap <buffer> <Leader>fr :PhpactorFindReferences<CR>
-  au FileType php nmap <buffer> <Leader>mf :PhpactorMoveFile<CR>
-  au FileType php nmap <buffer> <Leader>cf :PhpactorCopyFile<CR>
-  au FileType php nmap <buffer> <silent> <Leader>ee
-      \ :PhpactorExtractExpression<CR>
-  au FileType php vmap <buffer> <silent> <Leader>ee
-      \ :<C-u>PhpactorExtractExpression<CR>
-  au FileType php vmap <buffer> <silent> <Leader>em
-      \ :<C-u>PhpactorExtractMethod<CR>
-augroup END
+" augroup PhpactorMappings
+"   au!
+"   au FileType php nmap <buffer> <Leader>u :PhpactorImportClass<CR>
+"   au FileType php nmap <buffer> <Leader>e :PhpactorClassExpand<CR>
+"   au FileType php nmap <buffer> <Leader>ua :PhpactorImportMissingClasses<CR>
+"   au FileType php nmap <buffer> <Leader>mm :PhpactorContextMenu<CR>
+"   au FileType php nmap <buffer> <Leader>nn :PhpactorNavigate<CR>
+"   au FileType php,cucumber nmap <buffer> <C-]>
+"       \ :PhpactorGotoDefinition edit<CR>
+"   au FileType php nmap <buffer> <Leader>K :PhpactorHover<CR>
+"   au FileType php nmap <buffer> <Leader>tt :PhpactorTransform<CR>
+"   au FileType php nmap <buffer> <Leader>cc :PhpactorClassNew<CR>
+"   au FileType php nmap <buffer> <Leader>ci :PhpactorClassInflect<CR>
+"   au FileType php nmap <buffer> <Leader>fr :PhpactorFindReferences<CR>
+"   au FileType php nmap <buffer> <Leader>mf :PhpactorMoveFile<CR>
+"   au FileType php nmap <buffer> <Leader>cf :PhpactorCopyFile<CR>
+"   au FileType php nmap <buffer> <silent> <Leader>ee
+"       \ :PhpactorExtractExpression<CR>
+"   au FileType php vmap <buffer> <silent> <Leader>ee
+"       \ :<C-u>PhpactorExtractExpression<CR>
+"   au FileType php vmap <buffer> <silent> <Leader>em
+"       \ :<C-u>PhpactorExtractMethod<CR>
+" augroup END
 
 
 let g:go_def_mode='gopls'
@@ -398,13 +399,18 @@ let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 let g:clang_format#auto_format_on_insert_leave=1
 
- let g:lsc_server_commands = {
- \  "go": {
- \    "command": "gopls serve",
- \    "log_level": 2,
- \    "suppress_stderr": v:true,
- \  },
- \}
+" let g:lsc_server_commands = {
+" \  "go": {
+" \    "command": "gopls serve",
+" \    "log_level": 2,
+" \    "suppress_stderr": v:true,
+" \  },
+" \  "php": {
+" \    "command": "psalm-language-server",
+" \    "log_level": 2,
+" \    "suppress_stderr": v:true,
+" \  },
+" \}
 
 
 " map to <Leader>cf in C++ code
