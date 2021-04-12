@@ -75,10 +75,10 @@ Plug 'nvie/vim-togglemouse'
 "------- web backend ----------
 Plug '2072/PHP-Indenting-for-VIm'
 " Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-" Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
-" Plug 'camilledejoye/phpactor-mappings'
-" Plug 'kristijanhusak/deoplete-phpactor'
-" Plug 'phpactor/coc-phpactor'
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+Plug 'camilledejoye/phpactor-mappings'
+Plug 'kristijanhusak/deoplete-phpactor'
+Plug 'phpactor/coc-phpactor'
 Plug 'lepture/vim-jinja'
 "------- php-doc --------------
 Plug 'tobyS/pdv'

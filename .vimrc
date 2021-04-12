@@ -182,38 +182,70 @@ autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
 " autocmd FileType php setlocal omnifunc=phpcd#CompletePHP
+autocmd FileType php setlocal omnifunc=phpactor#Complete
 autocmd FileType go setlocal omnifunc=gocomplete#Complete
 
-" call deoplete#custom#option('sources', {'php' : ['omni', 'phpactor', 'ultisnips', 'buffer']})
+call deoplete#custom#option('sources', {'php' : ['omni', 'phpactor', 'ultisnips', 'buffer']})
 
 let g:phpactorPhpBin = "/usr/bin/php8.0"
 let g:phpactorCompletionIgnoreCase=1
-" autocmd FileType php setlocal omnifunc=phpactor#Complete
-let g:lsp_settings_filetype_php = 'psalm-language-server'
+" let g:lsp_log_verbose = 4
+" let g:lsp_log_file = 'vim-lsp.log'
+" let g:lsp_settings_filetype_php = 'psalm-language-server'
 
-" augroup PhpactorMappings
-"   au!
-"   au FileType php nmap <buffer> <Leader>u :PhpactorImportClass<CR>
-"   au FileType php nmap <buffer> <Leader>e :PhpactorClassExpand<CR>
-"   au FileType php nmap <buffer> <Leader>ua :PhpactorImportMissingClasses<CR>
-"   au FileType php nmap <buffer> <Leader>mm :PhpactorContextMenu<CR>
-"   au FileType php nmap <buffer> <Leader>nn :PhpactorNavigate<CR>
-"   au FileType php,cucumber nmap <buffer> <C-]>
-"       \ :PhpactorGotoDefinition edit<CR>
-"   au FileType php nmap <buffer> <Leader>K :PhpactorHover<CR>
-"   au FileType php nmap <buffer> <Leader>tt :PhpactorTransform<CR>
-"   au FileType php nmap <buffer> <Leader>cc :PhpactorClassNew<CR>
-"   au FileType php nmap <buffer> <Leader>ci :PhpactorClassInflect<CR>
-"   au FileType php nmap <buffer> <Leader>fr :PhpactorFindReferences<CR>
-"   au FileType php nmap <buffer> <Leader>mf :PhpactorMoveFile<CR>
-"   au FileType php nmap <buffer> <Leader>cf :PhpactorCopyFile<CR>
-"   au FileType php nmap <buffer> <silent> <Leader>ee
-"       \ :PhpactorExtractExpression<CR>
-"   au FileType php vmap <buffer> <silent> <Leader>ee
-"       \ :<C-u>PhpactorExtractExpression<CR>
-"   au FileType php vmap <buffer> <silent> <Leader>em
-"       \ :<C-u>PhpactorExtractMethod<CR>
-" augroup END
+"function! s:on_lsp_buffer_enabled() abort
+"    setlocal omnifunc=lsp#complete
+"    setlocal signcolumn=yes
+"    if exists('+tagfunc') | setlocal tagfunc=lsp#tagfunc | endif
+"    nmap <buffer> gd <plug>(lsp-definition)
+"    nmap <buffer> gs <plug>(lsp-document-symbol-search)
+"    nmap <buffer> gS <plug>(lsp-workspace-symbol-search)
+"    nmap <buffer> gr <plug>(lsp-references)
+"    nmap <buffer> gi <plug>(lsp-implementation)
+"    nmap <buffer> gt <plug>(lsp-type-definition)
+"    nmap <buffer> <leader>rn <plug>(lsp-rename)
+"    nmap <buffer> [g <plug>(lsp-previous-diagnostic)
+"    nmap <buffer> ]g <plug>(lsp-next-diagnostic)
+"    nmap <buffer> K <plug>(lsp-hover)
+"    inoremap <buffer> <expr><c-f> lsp#scroll(+4)
+"    inoremap <buffer> <expr><c-d> lsp#scroll(-4)
+"
+"    let g:lsp_format_sync_timeout = 1000
+"    autocmd! BufWritePre *.rs,*.go call execute('LspDocumentFormatSync')
+"    
+"    " refer to doc to add more commands
+"endfunction
+"
+"augroup lsp_install
+"    au!
+"    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+"    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+"augroup END
+
+
+ augroup PhpactorMappings
+   au!
+   au FileType php nmap <buffer> <Leader>u :PhpactorImportClass<CR>
+   au FileType php nmap <buffer> <Leader>e :PhpactorClassExpand<CR>
+   au FileType php nmap <buffer> <Leader>ua :PhpactorImportMissingClasses<CR>
+   au FileType php nmap <buffer> <Leader>mm :PhpactorContextMenu<CR>
+   au FileType php nmap <buffer> <Leader>nn :PhpactorNavigate<CR>
+   au FileType php,cucumber nmap <buffer> <C-]>
+       \ :PhpactorGotoDefinition edit<CR>
+   au FileType php nmap <buffer> <Leader>K :PhpactorHover<CR>
+   au FileType php nmap <buffer> <Leader>tt :PhpactorTransform<CR>
+   au FileType php nmap <buffer> <Leader>cc :PhpactorClassNew<CR>
+   au FileType php nmap <buffer> <Leader>ci :PhpactorClassInflect<CR>
+   au FileType php nmap <buffer> <Leader>fr :PhpactorFindReferences<CR>
+   au FileType php nmap <buffer> <Leader>mf :PhpactorMoveFile<CR>
+   au FileType php nmap <buffer> <Leader>cf :PhpactorCopyFile<CR>
+   au FileType php nmap <buffer> <silent> <Leader>ee
+       \ :PhpactorExtractExpression<CR>
+   au FileType php vmap <buffer> <silent> <Leader>ee
+       \ :<C-u>PhpactorExtractExpression<CR>
+   au FileType php vmap <buffer> <silent> <Leader>em
+       \ :<C-u>PhpactorExtractMethod<CR>
+ augroup END
 
 
 let g:go_def_mode='gopls'
