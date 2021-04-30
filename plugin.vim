@@ -21,6 +21,8 @@ endif
 Plug 'lighttiger2505/deoplete-vim-lsp'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
+Plug 'jigish/vim-eclim'
+Plug 'Shougo/context_filetype.vim'
 
 Plug 'mattn/emmet-vim'  
 "Plug 'Raimondi/delimitMate'
@@ -75,10 +77,10 @@ Plug 'nvie/vim-togglemouse'
 "------- web backend ----------
 Plug '2072/PHP-Indenting-for-VIm'
 " Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
-Plug 'camilledejoye/phpactor-mappings'
-Plug 'kristijanhusak/deoplete-phpactor'
-Plug 'phpactor/coc-phpactor'
+" Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+" Plug 'camilledejoye/phpactor-mappings'
+" Plug 'kristijanhusak/deoplete-phpactor'
+" Plug 'phpactor/coc-phpactor'
 Plug 'lepture/vim-jinja'
 "------- php-doc --------------
 Plug 'tobyS/pdv'
