@@ -191,7 +191,8 @@ autocmd FileType go setlocal omnifunc=gocomplete#Complete
 let g:phpactorPhpBin = "/usr/bin/php8.0"
 let g:phpactorCompletionIgnoreCase=1
 " let g:lsp_log_verbose = 1
-" let g:lsp_log_file = 'vim-lsp.log'
+" let g:lsp_log_file = expand('~/vim-lsp.log')
+" let g:lsp_settings_filetype_php = 'intelephense'
 let g:lsp_settings_filetype_php = 'psalm-language-server'
 
 let go_term_enabled= 1
@@ -246,7 +247,8 @@ augroup END
 "     \ 'cmd': {server_info->[expand('psalm-language-server')]},
 "     \ 'allowlist': ['php'],
 "     \ })
-"
+let g:lsp_document_highlight_enabled=1
+
 " augroup PhpactorMappings
 "   au!
 "   au FileType php nmap <buffer> <Leader>u :PhpactorImportClass<CR>
