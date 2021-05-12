@@ -192,8 +192,8 @@ let g:phpactorPhpBin = "/usr/bin/php8.0"
 let g:phpactorCompletionIgnoreCase=1
 " let g:lsp_log_verbose = 1
 " let g:lsp_log_file = expand('~/vim-lsp.log')
-" let g:lsp_settings_filetype_php = 'intelephense'
-let g:lsp_settings_filetype_php = 'psalm-language-server'
+let g:lsp_settings_filetype_php = 'intelephense'
+"let g:lsp_settings_filetype_php = 'psalm-language-server'
 
 let go_term_enabled= 1
 "let go_term_mode= "split"
@@ -210,6 +210,13 @@ let g:go_term_height = 3
 "let g:go_list_type = "quickfix"
 "let g:go_list_type_commands={"GoRun!": "", "GoRun": ""}
 "let g:go_test_show_name=1
+
+  let g:go_debug_windows = {
+            \ 'vars':       'leftabove 30vnew',
+            \ 'stack':      'leftabove 30new',
+            \ 'goroutines': 'botright 10new',
+            \ 'out':        'botright 5new',
+  \ }
 
 
 function! s:on_lsp_buffer_enabled() abort
