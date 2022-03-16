@@ -30,13 +30,13 @@ Plug 'hrsh7th/vim-vsnip-integ'
 Plug 'jigish/vim-eclim'
 Plug 'Shougo/context_filetype.vim'
 
-Plug 'mattn/emmet-vim'  
+Plug 'mattn/emmet-vim'
 "Plug 'Raimondi/delimitMate'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ervandew/supertab'
-" snippets                
-" Plug 'garbas/vim-snipmate' 
-Plug 'honza/vim-snippets'  
+" snippets
+" Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
 "------ snipmate dependencies -------
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -83,7 +83,7 @@ Plug 'nvie/vim-togglemouse'
 "------- web backend ----------
 Plug '2072/PHP-Indenting-for-VIm'
 " Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
-" Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
+Plug 'phpactor/phpactor', {'for': 'php', 'tag': '*', 'do': 'composer install --no-dev -o'}
 " Plug 'camilledejoye/phpactor-mappings'
 " Plug 'kristijanhusak/deoplete-phpactor'
 " Plug 'phpactor/coc-phpactor'
@@ -133,6 +133,8 @@ Plug 'tpope/vim-vividchalk'
 Plug 'Lokaltog/vim-distinguished'
 Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'fisadev/fisa-vim-colorscheme'
+
+" Plug 'rust-lang/rust.vim'
 
 " Initialize plugin system
 call plug#end()

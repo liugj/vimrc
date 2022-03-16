@@ -190,7 +190,7 @@ autocmd FileType go setlocal omnifunc=gocomplete#Complete
 
 let g:phpactorPhpBin = "/usr/bin/php8.0"
 let g:phpactorCompletionIgnoreCase=1
-" let g:lsp_log_verbose = 1
+" let g:lsp_log_verbose = 2
 " let g:lsp_log_file = expand('~/vim-lsp.log')
 let g:lsp_settings_filetype_php = 'intelephense'
 "let g:lsp_settings_filetype_php = 'psalm-language-server'
@@ -412,8 +412,8 @@ let g:NERDTreeGlyphReadOnly = "RO"
 
 " If you use php-cs-fixer version 2.x
 let g:php_cs_fixer_rules = "@PSR2"          " options: --rules (default:@PSR2)
-let g:php_cs_fixer_cache = ".php_cs.cache" " options: --cache-file
-let g:php_cs_fixer_config_file = '.php_cs' " options: --config
+let g:php_cs_fixer_cache = ".php-cs-fixer.cache" " options: --cache-file
+let g:php_cs_fixer_config_file = '.php-cs-fixer.php' " options: --config
 " End of php-cs-fixer version 2 config params
 
 let g:php_cs_fixer_php_path = "php"               " Path to PHP
@@ -463,6 +463,8 @@ let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 let g:clang_format#auto_format_on_insert_leave=1
 
+" let  g:rustfmt_autosave = 1
+
 " let g:lsc_server_commands = {
 " \  "go": {
 " \    "command": "gopls serve",
@@ -490,5 +492,6 @@ nmap <Leader>C :ClangFormatAutoToggle<CR>
 " let g:vdebug_options = {}
 "let g:vdebug_options["port"] = 9010
 "let g:vdebug_options["debug_file"] = "~/vdebug.log"
+
 "let g:vdebug_options["debug_file_level"] = 2
 "let g:vdebug_options['break_on_open'] = 0
